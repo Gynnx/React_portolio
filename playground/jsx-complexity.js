@@ -22,11 +22,17 @@ class App extends React.Component{
     render(){
         return (
             <div>
-                <p>{list.map((item)=>{
+            <h3>A good rule of thumb is that elements inside the map() call need keys.</h3>
+                {list.map((item)=>{
                     return (
-                        <p>{item.title}</p>
+                        <div key = {item.objectID}>
+                        <a href = {item.url}>{item.title} </a>
+                        <p>Number of comments: {item.num_comments}</p>
+                        <p>Author: {item.author}</p>
+                        <p>Points: {item.points}</p>
+                        </div>
                     )
-                })}</p>
+              })}
             </div>
         );
     };
